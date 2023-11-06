@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --color1: #222831;
+    --color2: #393E46;
+    --color3: #ffd369;
+    --color4: #EEEEEE;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color1);
+}
+
+main {
+    display: flex;
+    justify-content: flex-end; /* Changed to 'flex-end' */
+    padding: 110px;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Calculator styles */
+.calculator {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(1.5em);
+    animation: menu 1.5s ease forwards;
+}
+
+.texts {
+    text-align: center;
+    color: var(--color4);
+    padding: 20px;
+}
+
+.btn-aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 40px 0; /* Combined margin properties */
+    background-color: var(--color3);
+    color: var(--color1);
+    border: none;
+    transition: 0.5s all;
+    opacity: 0;
+    transform: translateY(0.8em);
+    animation: menu 1.9s ease forwards;
+}
+
+button:hover {
+    transform: translateY(-0.2em);
+    background-color: var(--color4);
+}
+
+.texts h1 {
+    font-size: 36px;
+    color: var(--color4);
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(0.5em);
+    animation: menu 1.5s ease forwards;
+}
+
+/* Styling links */
+.texts a {
+    text-decoration: none;
+    color: var(--color-link);
+    transition: color 0.2s;
+}
+
+.texts a:hover {
+    color: var(--color-link-hover);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: -5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="number"] {
+    width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: var(--color3);
+    color: var(--color1);
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: scale(1.05);
+    background-color: var(--color2);
+    color: var(--color4);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn #enviar,
+.btn #resetar {
+    width: 200px;
+}
+
+/* Styles for the result message */
+.modal {
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.hide {
+    display: none;
+}
+
+.modal-content {
+    font-size: 1.3rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.text-h2 {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-p {
+    display: flex;
+    justify-content: justify; /* Corrected to 'justify-content' */
+    align-items: center;
+    padding: 3px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@keyframes animação {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes menu {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .texts h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    main {
+        display: contents;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .calculator {
+        width: 100%;
+    }
+}

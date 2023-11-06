@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Logo.ico" type="image/x-icon">
+  <title>Calculadora DRE</title>
+</head>
+
+<body>
+  <main>
+
+    <aside>
+      <section class="nav">
+        <div class="texts">
+          <h1>Calculadora de Demonstração do Resultado do Exercício (DRE)</h1>
+          <section class="btn-aside">
+            <a href="saiba_mais.html"><button>Saiba mais!</button></a>
+          </section>
+        </div>
+      </section>
+    </aside>
+
+    <section class="calculator">
+      <form id="dreCalculator">
+        <label for="receitaBruta" title="valor total das vendas ou dos serviços comercializados sem deduzir os impostos">Receita
+          Operacional Bruta</label>
+        <input type="number" id="receitaBruta" placeholder="" required><br>
+
+        <label for="deducoes" title="Impostos/Devoluções/Abatimentos">Deduções</label>
+        <input type="number" id="deducoes" placeholder="" required><br>
+
+        <label for="custosProdutos"
+          title="é um indicador que mensura se as despesas que a empresa tem com uma mercadoria ainda dão lucro nas vendas.">Custos
+          de mercadorias Vendidas(CMV)</label>
+        <input type="number" id="custosProdutos" placeholder="" required><br>
+
+        <label for="despesasOperacionais"
+          title="São aquelas ligadas diretamente aos gastos essenciais do negócio, comumente ligadas ao bom funcionamento da empresa.">Despesas
+          Operacionais</label>
+        <input type="number" id="despesasOperacionais" placeholder="" required><br>
+
+        <label for="outrasDespesas" title="Imposto de renda e Contribuição Social">Provisões</label>
+        <input type="number" id="provisoes" placeholder="" required><br>
+
+        <!--RESULTADOS-->
+
+        <div class="hide">
+          <label for="lucroBruto">Receita Bruta:</label>
+          <input type="number" id="lucroBruto" readonly><br>
+        </div>
+
+        <div class="hide">
+          <label for="receitaOperacional">Receita Operacional:</label>
+          <input type="number" id="receitaOperacional" readonly><br>
+        </div>
+
+        <div class="hide">
+          <label for="roair">Receita Operacional antes de IR:</label>
+          <input type="number" id="roair" readonly><br>
+        </div>
+
+        <div class="hide">
+          <label for="Lucro/Prejuízo">Lucro/Prejuízo:</label>
+          <input type="number" id="lucroPrejuizo" readonly><br>
+        </div>
+
+        <div class="btn">
+          <input type="submit" value="Calcular" id="enviar">
+          <input type="reset" value="Limpar" id="resetar">
+        </div>
+
+      </form>
+    </section>
+    <!-- Mensagem de resultado -->
+    <nav class="modal-center">
+      <div id="resultModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeBtn">&times;</span>
+          <h2 class="text-h2">Resultados</h2>
+          <p class="text-p">Receita Bruta: <span id="receitaBrutaresul"></span></p>
+          <p class="text-p">Receita liquida: <span id="resultReceitaLiquida"></span></p>
+          <p class="text-p">Lucro Bruto: <span id="resultLucroBruto"></span></p>
+          <p class="text-p">Receita Operacional antes de IR: <span id="resultLair"></span></p>
+          <p class="text-p">Lucro/Prejuízo: <span id="resultLucroPrejuizoOperacional"></span></p>
+        </div>
+      </div>
+    </nav>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
