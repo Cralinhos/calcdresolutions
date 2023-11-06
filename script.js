@@ -9,12 +9,14 @@ document.getElementById("dreCalculator").addEventListener("submit", function (ev
   const provisoes = parseFloat(document.getElementById("provisoes").value);
 
   // Calcule os valores intermediários
+  const receitaBrutaresul = receitaBruta;
   const receitaLiquida = receitaBruta - deducoes;
   const receitaOperacional = receitaLiquida - custosProdutos;
   const roair = receitaOperacional - despesasOperacionais;
   const lucroPrejuizo = roair - provisoes;
 
   // Atualize os campos de resultado com os valores calculados
+  document.getElementById("receitaBrutaresul").textContent = receitaBrutaresul.toFixed(2);
   document.getElementById("resultReceitaLiquida").textContent = receitaLiquida.toFixed(2);
   document.getElementById("resultLucroBruto").textContent = receitaOperacional.toFixed(2);
   document.getElementById("resultLair").textContent = roair.toFixed(2);
