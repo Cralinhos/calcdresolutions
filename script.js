@@ -52,4 +52,5 @@ document.getElementById("dreCalculator").addEventListener("submit", function (ev
 
   // Exiba o modal de resultados
   showModal("resultModal"); // Exibe o modal com os resultados
+
 });
